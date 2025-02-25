@@ -20,22 +20,22 @@ const Libero = () => {
 
         <Tabs defaultValue="treinos" className="w-full">
           <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="treinos" className="flex items-center gap-2">
-              <Dumbbell className="w-4 h-4" />
+            <TabsTrigger value="treinos" className="flex items-center justify-center gap-2">
+              <Dumbbell className="w-4 h-4 flex-shrink-0" />
               <span className="hidden sm:inline">Treinos Disponíveis</span>
               <span className="sm:hidden">Treinos</span>
             </TabsTrigger>
-            <TabsTrigger value="perfil" className="flex items-center gap-2">
-              <User className="w-4 h-4" />
+            <TabsTrigger value="perfil" className="flex items-center justify-center gap-2">
+              <User className="w-4 h-4 flex-shrink-0" />
               <span className="hidden sm:inline">Perfil</span>
             </TabsTrigger>
-            <TabsTrigger value="selecionados" className="flex items-center gap-2">
-              <ListChecks className="w-4 h-4" />
+            <TabsTrigger value="selecionados" className="flex items-center justify-center gap-2">
+              <ListChecks className="w-4 h-4 flex-shrink-0" />
               <span className="hidden sm:inline">Treinos Selecionados</span>
               <span className="sm:hidden">Meus Treinos</span>
             </TabsTrigger>
-            <TabsTrigger value="comunidade" className="flex items-center gap-2">
-              <Users className="w-4 h-4" />
+            <TabsTrigger value="comunidade" className="flex items-center justify-center gap-2">
+              <Users className="w-4 h-4 flex-shrink-0" />
               <span className="hidden sm:inline">Comunidade</span>
             </TabsTrigger>
           </TabsList>
