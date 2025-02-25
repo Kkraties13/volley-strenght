@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 const Libero = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 p-6">
-      <div className="max-w-7xl mx-auto space-y-8">
-        <div className="flex items-center justify-between">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pb-16">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-center justify-between p-6">
           <h1 className="text-3xl font-bold text-gray-900">Líbero</h1>
           <Link 
             to="/" 
@@ -18,27 +18,20 @@ const Libero = () => {
           </Link>
         </div>
 
-        <Tabs defaultValue="treinos" className="w-full">
-          <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="treinos" className="flex items-center justify-center gap-2">
-              <Dumbbell className="w-4 h-4 flex-shrink-0" />
-              <span className="hidden sm:inline">Treinos Disponíveis</span>
-              <span className="sm:hidden">Treinos</span>
-            </TabsTrigger>
-            <TabsTrigger value="perfil" className="flex items-center justify-center gap-2">
-              <User className="w-4 h-4 flex-shrink-0" />
-              <span className="hidden sm:inline">Perfil</span>
-            </TabsTrigger>
-            <TabsTrigger value="selecionados" className="flex items-center justify-center gap-2">
-              <ListChecks className="w-4 h-4 flex-shrink-0" />
-              <span className="hidden sm:inline">Treinos Selecionados</span>
-              <span className="sm:hidden">Meus Treinos</span>
-            </TabsTrigger>
-            <TabsTrigger value="comunidade" className="flex items-center justify-center gap-2">
-              <Users className="w-4 h-4 flex-shrink-0" />
-              <span className="hidden sm:inline">Comunidade</span>
-            </TabsTrigger>
-          </TabsList>
+        <Tabs defaultValue="selecionados" className="w-full">
+          <TabsContent value="selecionados">
+            <Card>
+              <CardHeader>
+                <CardTitle>Treinos Selecionados</CardTitle>
+                <CardDescription>
+                  Seus treinos favoritos e programação atual
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>Lista de treinos selecionados será implementada aqui</p>
+              </CardContent>
+            </Card>
+          </TabsContent>
 
           <TabsContent value="treinos">
             <Card>
@@ -50,6 +43,20 @@ const Libero = () => {
               </CardHeader>
               <CardContent>
                 <p>Lista de treinos será implementada aqui</p>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="comunidade">
+            <Card>
+              <CardHeader>
+                <CardTitle>Comunidade</CardTitle>
+                <CardDescription>
+                  Interaja com outros jogadores
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>Área de discussão será implementada aqui</p>
               </CardContent>
             </Card>
           </TabsContent>
@@ -68,33 +75,20 @@ const Libero = () => {
             </Card>
           </TabsContent>
 
-          <TabsContent value="selecionados">
-            <Card>
-              <CardHeader>
-                <CardTitle>Treinos Selecionados</CardTitle>
-                <CardDescription>
-                  Seus treinos favoritos e programação atual
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>Lista de treinos selecionados será implementada aqui</p>
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          <TabsContent value="comunidade">
-            <Card>
-              <CardHeader>
-                <CardTitle>Comunidade</CardTitle>
-                <CardDescription>
-                  Interaja com outros jogadores
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>Área de discussão será implementada aqui</p>
-              </CardContent>
-            </Card>
-          </TabsContent>
+          <TabsList className="fixed bottom-0 left-0 right-0 grid w-full grid-cols-4 border-t bg-background">
+            <TabsTrigger value="selecionados" className="flex items-center justify-center py-3">
+              <ListChecks className="w-6 h-6" />
+            </TabsTrigger>
+            <TabsTrigger value="treinos" className="flex items-center justify-center py-3">
+              <Dumbbell className="w-6 h-6" />
+            </TabsTrigger>
+            <TabsTrigger value="comunidade" className="flex items-center justify-center py-3">
+              <Users className="w-6 h-6" />
+            </TabsTrigger>
+            <TabsTrigger value="perfil" className="flex items-center justify-center py-3">
+              <User className="w-6 h-6" />
+            </TabsTrigger>
+          </TabsList>
         </Tabs>
       </div>
     </div>
